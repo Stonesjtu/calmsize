@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 import os
 
 long_description = (
-    open('README.txt').read()
+    open('README.md').read()
     + '\n' +
-    open('CHANGES.txt').read()
+    open('CHANGES.md').read()
     + '\n' +
     'Download\n'
     '========\n'
