@@ -1,14 +1,17 @@
 from setuptools import setup, find_packages
 import os
 
-long_description = (
+import m2r
+
+long_description = m2r.convert(
     open('README.md').read()
     + '\n' +
     open('CHANGES.md').read()
     + '\n' +
     'Download\n'
     '========\n'
-    )
+)
+print(long_description)
 
 setup(
     name="calmsize",
