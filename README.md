@@ -1,5 +1,6 @@
 calmsize
 ==============
+[![Build Status](https://travis-ci.com/Stonesjtu/calmsize.svg?token=vyTdxHbi1PCRzV6disHp&branch=master)](https://travis-ci.com/Stonesjtu/calmsize)
 
 ### NOTICE
 
