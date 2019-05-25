@@ -1,23 +1,17 @@
 from setuptools import setup, find_packages
 import os
 
-import m2r
-
-long_description = m2r.convert(
-    open('README.md').read()
-    + '\n' +
+long_description = '{}\n{}\nDownload\n======\n'.format(
+    open('README.md').read(),
     open('CHANGES.md').read()
-    + '\n' +
-    'Download\n'
-    '========\n'
 )
-print(long_description)
 
 setup(
     name="calmsize",
-    version="0.9.1",
+    version="0.1.0",
     description="Fork from hurry.filesize, A simple Python library for human readable file sizes (or anything sized in bytes).",
     long_description=long_description,
+    long_description_content_type='text/markdown',
     classifiers=[
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
