@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.9 (2009-03-11)
+0.0.1 (2019-05-24)
 ----------------
 
-* Initial public release.
+* Forked from hurry.filesize
