@@ -1,6 +1,9 @@
 calmsize
 ==============
 [![Build Status](https://travis-ci.com/Stonesjtu/calmsize.svg?token=vyTdxHbi1PCRzV6disHp&branch=master)](https://travis-ci.com/Stonesjtu/calmsize)
+![PyPI](https://img.shields.io/pypi/v/calmsize.svg)
+[![PyPI download month](https://img.shields.io/pypi/dm/calmsize.svg)](https://pypi.python.org/pypi/calmsize/)
+
 
 ### NOTICE
 
