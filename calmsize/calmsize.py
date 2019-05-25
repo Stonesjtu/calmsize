@@ -83,7 +83,7 @@ class ByteSize():
         self.amount *= sign
 
     def __str__(self):
-        return str(round(self.amount)) + self.unit
+        return str(int(round(self.amount))) + self.unit
 
     def __format__(self, formatstr):
         if formatstr:
