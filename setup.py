@@ -24,9 +24,7 @@ setup(
     author_email='skyisno.1@gmail.com',
     url='',
     license='ZPL 2.1',
-    packages=find_packages('calmsize'),
-    package_dir= {'': 'calmsize'},
-    # namespace_packages=['calmsize'],
+    packages=['calmsize'],
     include_package_data=True,
     zip_safe=True,
     install_requires=[
