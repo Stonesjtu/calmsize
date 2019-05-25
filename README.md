@@ -17,39 +17,51 @@ megabytes (M), etc.
 The default system it uses is "traditional", where multipliers of 1024
 increase the unit size::
 
-  >>> from calmsize import size
-  >>> size(1024)
-  '1K'
+```ipython
+>>> from calmsize import size, ByteSize
+>>> size(1024)
+'1K'
+>>> size(-1024)
+'-1K'
+>>> '{:.2f}'.format(size(-1024))
+'-1.00K'
+```
 
 An alternative, slightly more verbose system::
 
-  >>> from calmsize import alternative
-  >>> size(1, system=alternative)
-  '1 byte'
-  >>> size(10, system=alternative)
-  '10 bytes'
-  >>> size(1024, system=alternative)
-  '1 KB'
+```ipython
+>>> from calmsize import alternative
+>>> size(1, system=alternative)
+'1 byte'
+>>> size(10, system=alternative)
+'10 bytes'
+>>> size(1024, system=alternative)
+'1 KB'
+```
 
 A verbose system::
 
-  >>> from calmsize import verbose
-  >>> size(10, system=verbose)
-  '10 bytes'
-  >>> size(1024, system=verbose)
-  '1 kilobyte'
-  >>> size(2000, system=verbose)
-  '1 kilobyte'
-  >>> size(3000, system=verbose)
-  '2 kilobytes'
-  >>> size(1024 * 1024, system=verbose)
-  '1 megabyte'
-  >>> size(1024 * 1024 * 3, system=verbose)
-  '3 megabytes'
+```ipython
+>>> from calmsize import verbose
+>>> size(10, system=verbose)
+'10 bytes'
+>>> size(1024, system=verbose)
+'1 kilobyte'
+>>> size(2000, system=verbose)
+'1 kilobyte'
+>>> size(3000, system=verbose)
+'2 kilobytes'
+>>> size(1024 * 1024, system=verbose)
+'1 megabyte'
+>>> size(1024 * 1024 * 3, system=verbose)
+'3 megabytes'
+```
 
 You can also use the SI system, where multipliers of 1000 increase the unit
 size::
 
-  >>> from calmsize import si
-  >>> size(1000, system=si)
-  '1K'
+```ipython
+>>> from calmsize import si
+>>> size(1000, system=si)
+'1K'
+```

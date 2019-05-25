@@ -54,6 +54,7 @@ class ByteSize():
         self.system = system
         self.amount = num_bytes
         self.unit = self.system[-1]  # lowest is pure Bytes
+        self.find_largest_unit()
 
     def _find_largest_unit_pos(self, num_bytes):
         """Find the proper unit and corresponding amount
@@ -82,11 +83,9 @@ class ByteSize():
         self.amount *= sign
 
     def __str__(self):
-        self.find_largest_unit()
         return str(round(self.amount)) + self.unit
 
     def __format__(self, formatstr):
-        self.find_largest_unit()
         if formatstr:
             return self.amount.__format__(formatstr) + self.unit
         else:
@@ -94,6 +93,34 @@ class ByteSize():
 
     def __repr__(self):
         return str(self)
+
+    def __eq__(self, other):
+        if isinstance(other, str):
+            return str(self) == other
+        elif isinstance(other, ByteSize):
+            return self.amount == other.amount
+        else:
+            return type(other)(self.amount) == other
+
+    def __lt__(self, other):
+        if isinstance(other, str):
+            raise NotImplementedError(
+                'Comparison between string and ByteSize not supported yet'
+            )
+        elif isinstance(other, ByteSize):
+            return self.amount < other.amount
+        else:
+            return type(other)(self.amount) < other
+
+    def __gt__(self, other):
+        if isinstance(other, str):
+            raise NotImplementedError(
+                'Comparison between string and ByteSize not supported yet'
+            )
+        elif isinstance(other, ByteSize):
+            return self.amount > other.amount
+        else:
+            return type(other)(self.amount) > other
 
 
 def size(bytes, system=traditional):
@@ -105,20 +132,6 @@ def size(bytes, system=traditional):
     '10B'
     >>> size(100)
     '100B'
-    >>> size(1000)
-    '1000B'
-    >>> size(2000)
-    '1K'
-    >>> size(10000)
-    '9K'
-    >>> size(20000)
-    '19K'
-    >>> size(100000)
-    '97K'
-    >>> size(200000)
-    '195K'
-    >>> size(1000000)
-    '976K'
     >>> size(2000000)
     '1M'
 
@@ -130,22 +143,9 @@ def size(bytes, system=traditional):
     '100B'
     >>> size(1000, system=si)
     '1K'
-    >>> size(2000, system=si)
-    '2K'
-    >>> size(10000, system=si)
-    '10K'
-    >>> size(20000, system=si)
-    '20K'
-    >>> size(100000, system=si)
-    '100K'
-    >>> size(200000, system=si)
-    '200K'
-    >>> size(1000000, system=si)
-    '1M'
     >>> size(2000000, system=si)
     '2M'
 
     """
     byte_size = ByteSize(bytes, system)
-    byte_size.find_largest_unit()
-    return str(byte_size)
+    return byte_size
