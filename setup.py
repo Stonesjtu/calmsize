@@ -28,7 +28,7 @@ setup(
     package_dir= {'': 'calmsize'},
     # namespace_packages=['calmsize'],
     include_package_data=True,
-    zip_safe=False,
+    zip_safe=True,
     install_requires=[
         'setuptools',
     ],
