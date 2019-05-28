@@ -17,7 +17,7 @@ except FileNotFoundError:
 
 setup(
     name="calmsize",
-    version="0.1.2",
+    version="0.1.3",
     description="Fork from hurry.filesize, A simple Python library for human readable file sizes (or anything sized in bytes).",
     long_description=long_description,
     long_description_content_type='text/markdown',
