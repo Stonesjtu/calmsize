@@ -9,7 +9,7 @@ except NameError:
 
 try:
     long_description = '{}\n{}\nDownload\n======\n'.format(
-        open('README123.md').read(),
+        open('README.md').read(),
         open('CHANGES.md').read()
     )
 except FileNotFoundError:
