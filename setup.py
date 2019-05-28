@@ -1,14 +1,19 @@
 from setuptools import setup, find_packages
 import os
 
+# compatible for py27
+try:
+    FileNotFoundError
+except NameError:
+    FileNotFoundError = IOError
+
 try:
     long_description = '{}\n{}\nDownload\n======\n'.format(
-        open('README.md').read(),
+        open('README123.md').read(),
         open('CHANGES.md').read()
     )
 except FileNotFoundError:
     long_description = ''
-
 
 setup(
     name="calmsize",
