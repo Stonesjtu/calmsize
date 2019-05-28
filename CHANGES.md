@@ -1,6 +1,11 @@
 Changes
 =======
 
+0.1.2 (2019-05-27)
+----------------
+* Fix pip install fail of python2.7
+
+
 0.1.1 (2019-05-25)
 ----------------
 * Fix pip install filenotfound error
